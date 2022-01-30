@@ -7,9 +7,9 @@ import copy
 import json
 import subprocess
 import sys
+from pprint import pprint
 
 import pymysql
-from pprint import pprint
 
 
 def fix_stuff(host, instance):
@@ -40,6 +40,7 @@ def fix_stuff(host, instance):
                 )
                 print(cur._last_executed)
                 conn.commit()
+
 
 def fix_request_specs(host, instahnce):
     print("Checking if we need to fix the request specs")
