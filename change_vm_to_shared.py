@@ -40,6 +40,8 @@ def fix_stuff(host, instance):
                 )
                 print(cur._last_executed)
                 conn.commit()
+
+def fix_request_specs(host, instahnce):
     print("Checking if we need to fix the request specs")
     with pymysql.connect(
         host=host,
@@ -84,3 +86,4 @@ if __name__ == "__main__":
     )
 
     fix_stuff(sys.argv[1], sys.argv[2])
+    fix_request_specs(sys.argv[1], sys.argv[2])
